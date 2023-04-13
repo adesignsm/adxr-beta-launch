@@ -1,0 +1,8 @@
+#logo-canvas {
+    height: 100vh !important;
+    width: 100vw !important;
+}
+
+#logo-canvas canvas {
+    background-color: #000;
+}
