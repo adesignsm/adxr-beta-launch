@@ -1,0 +1,63 @@
+.introduction {
+  max-width: 32.75rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 15rem;
+  left: 6.5rem;
+  margin: auto 0;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.introduction__content {
+  padding: 1rem 3rem;
+}
+
+.fade-in {
+  animation: fadeIn ease 5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*MEDIA QUERIES*/
+/*=========== BREAKPOINTS =============*/
+/*Large  Screens and Devices (e.g.:DESKTOPS)*/
+@media screen and (max-width: 1200px) {
+  .introduction {
+    max-width: 33%;
+    left: 2rem;
+  }
+}
+
+/*Medium Screens and Devices (e.g.:TABLETS)*/
+@media screen and (max-width: 768px) {
+  .introduction {
+    max-width: 100%;
+    position: relative;
+    top:-15rem;
+    left: 0;
+    padding: 0 0.5rem;
+
+  }
+}
+
+/*Small Screens and Devices (e.g.:MOBILE)*/
+@media screen and (max-width: 480px) {
+  .introduction {
+    position: relative;
+    max-width: 100%;
+    top:-15rem;
+    left: 0;
+  }
+}

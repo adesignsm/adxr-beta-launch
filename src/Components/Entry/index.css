@@ -6,3 +6,21 @@
 #logo-canvas canvas {
     background-color: #000;
 }
+
+/*MEDIA QUERIES*/
+/*=========== BREAKPOINTS =============*/
+/*Large  Screens and Devices (e.g.:DESKTOPS)*/
+@media screen and (max-width: 1200px) {
+
+  }
+  
+  /*Medium Screens and Devices (e.g.:TABLETS)*/
+  @media screen and (max-width: 768px) {
+
+  }
+  
+  /*Small Screens and Devices (e.g.:MOBILE)*/
+  @media screen and (max-width: 480px) {
+;
+  }
+  
