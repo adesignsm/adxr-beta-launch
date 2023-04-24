@@ -1,11 +1,13 @@
 #logo-canvas {
     height: 100vh !important;
     width: 100vw !important;
+
 }
 
 #logo-canvas canvas {
-    background-color: #000;
-}
+    background-color: var(--background-primary);
+    color: var(--text-secondary);
+  }
 
 /*MEDIA QUERIES*/
 /*=========== BREAKPOINTS =============*/

@@ -1,7 +1,8 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
-import "./index.css";
+import "./Entry.css";
 import $ from "jquery";
 import "jquery-ui-bundle";
+
 
 import * as THREE from "three";
 import {
@@ -25,6 +26,7 @@ import LOGO_MODEL from "../../Assets/Models/toposphere.glb";
 import Introduction from "../Introduction";
 
 const Entry = () => {
+
   const [glitchState, setGlitchState] = useState(true);
   const [noiseState, setNoiseState] = useState(true);
   const [environmentState, setEnvironmentState] = useState(false);
@@ -78,11 +80,20 @@ const Entry = () => {
 
       modelRef.current.position.set(-center.x, -center.y - 1, -center.z);
 
+      //Hiding introduction text
+      $(".introduction").hide();
+
+      //On
       setTimeout(() => {
-        $("#logo-canvas canvas").animate({ backgroundColor: "#fff" }, 1000);
-        $("#logo-canvas").delay(1000).animate({ left: "25vw" }, 2500);
+        $("#logo-canvas canvas").animate({ backgroundColor: "var(--background-primary)" }, 1000);
+        $("#logo-canvas").delay(1000);
+        $("#logo-canvas").click(function(){
+          $("#logo-canvas").animate({ left: "25vw" }, 2500);
+          $(".introduction").show()
+        })
       }, 4000);
     }, [model]);
+
 
     return (
       <group ref={modelRef}>
