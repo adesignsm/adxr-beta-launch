@@ -83,18 +83,25 @@ const Entry = () => {
       //Hiding introduction text
       $(".introduction").hide();
 
+
+
       //On
       setTimeout(() => {
-        $("#logo-canvas canvas").animate({ backgroundColor: "var(--background-primary)" }, 1000);
+
+        $("#logo-canvas canvas").animate({backgroundColor: "--background-secondary"});        
         $("#logo-canvas").delay(1000);
-        $("#logo-canvas").click(function(){
-          $("#logo-canvas").animate({ left: "25vw" }, 2500);
-          $(".introduction").show()
-        })
+
       }, 4000);
     }, [model]);
 
+    $("#logo-canvas").on("click", function(){
+      $("#logo-canvas").animate({ left: "25vw" }, 2500);
+      $(".introduction").show();
+      
+    })
 
+
+    
     return (
       <group ref={modelRef}>
         <primitive object={model.scene} scale={1.5} />
@@ -104,7 +111,6 @@ const Entry = () => {
 
   return (
     <>
-    
       <Canvas id="logo-canvas" camera={{ position: [0, 0, 5] }}>
         <Model />
         <pointLight color="white" intensity={5} position={[0, 5, 0]} />

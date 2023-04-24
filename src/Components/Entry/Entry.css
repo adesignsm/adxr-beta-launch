@@ -1,11 +1,10 @@
 #logo-canvas {
     height: 100vh !important;
     width: 100vw !important;
-
 }
 
 #logo-canvas canvas {
-    background-color: var(--background-primary);
+    background-color: var(--background-primary) !important;
     color: var(--text-secondary);
   }
 
@@ -23,6 +22,6 @@
   
   /*Small Screens and Devices (e.g.:MOBILE)*/
   @media screen and (max-width: 480px) {
-;
+
   }
   

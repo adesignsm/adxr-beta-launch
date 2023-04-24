@@ -17,13 +17,17 @@ button {
     float: right;
     transition: all .5s;
   }
+
+  .main {
+    background-color: var(--background-primary);
+  }
 /*
 ========================================
 Variable CSS Styles
 ======================================== */
 :root {
-    --background-primary: #f5f4ef;
-    --background-secondary: #191a1b;
+    --background-primary: white;
+    --background-secondary: black;
     --text-primary: #191a1b;
     --text-secondary:#f5f4ef;
 
@@ -32,8 +36,8 @@ Variable CSS Styles
     reference: https://css-tricks.com/dark-modes-with-css/
   */
   [data-theme='dark'] {
-    --background-primary: #191a1b;
-    --background-secondary: #f5f4ef;
+    --background-primary: black;
+    --background-secondary: white;
     --text-primary: #f5f4ef;
     --text-secondary: #191a1b;
 
@@ -49,6 +53,7 @@ p {
     font-family: "Intern", sans-serif;
     font-size: 1.5rem;
     font-weight: lighter;
+    color: var(--text-primary);
 }
 
 
