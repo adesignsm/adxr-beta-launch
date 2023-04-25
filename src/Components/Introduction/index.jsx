@@ -10,18 +10,6 @@ const Introduction = () => {
   const [logo, setLogo] = useState(logoBlack);
 
   const darkMode = document.getElementById("switch-theme");
-/*
-  const changeLogo = () => {
-    setLogo(logoWhite)
-
-    return(
-      logo
-    )
-  };
-*/
- // darkMode.addEventListener("click", changeLogo);
-
-
 
 
   const Intro = () => {
@@ -29,7 +17,6 @@ const Introduction = () => {
     return (
       <div className="fade-in introduction" id="introduction">
         <img className="logo-black" id="logoBlack" src={logoBlack} />
-        <img className="logo-white" id="logoWhite" src={logoWhite} />
         <p className="introduction__content">
           ADXR, based in Toronto, Canada, is an organization aimed at bringing
           multidisciplinary artists, designers and thinkers together to develop
