@@ -36,33 +36,13 @@ const Entry = () => {
     const model = useGLTF(LOGO_MODEL);
     const modelRef = useRef();
 
-    useFrame(({ clock }) => {
+    useFrame(() => {
       modelRef.current.rotation.y += 0.002;
 
       if (opacity <= 0.3) {
         setOpacity((prevOpacity) => prevOpacity + 0.001);
       }
-
-      if (window.innerWidth >= 690) {
-        if (clock.elapsedTime >= 5) {
-          setNoiseState(false);
-          setEnvironmentState(true);
-        } else if (clock.elapsedTime >= 4) {
-          setGlitchState(false);
-        }
-      } else {
-        if (clock.elapsedTime >= 3.6) {
-          setNoiseState(false);
-          setEnvironmentState(true);
-        } else if (clock.elapsedTime >= 3.2) {
-          setGlitchState(false);
-        }
-      }
     });
-
-    useLayoutEffect(() => {
-      model.nodes.sphere.material.opacity = opacity;
-    }, [opacity]);
 
     useLayoutEffect(() => {
       model.nodes.Plane.visible = false;
@@ -82,9 +62,6 @@ const Entry = () => {
 
       //Hiding introduction text
       $(".introduction").hide();
-
-
-
       //On
       setTimeout(() => {
 
