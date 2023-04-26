@@ -30,6 +30,7 @@ Variable CSS Styles
     --background-secondary: black;
     --text-primary: #191a1b;
     --text-secondary:#f5f4ef;
+    //--adxr-logo: 0;
 
   }
   /*
@@ -40,6 +41,8 @@ Variable CSS Styles
     --background-secondary: white;
     --text-primary: #f5f4ef;
     --text-secondary: #191a1b;
+    --adxr-logo: 1;
+
 
   }
 

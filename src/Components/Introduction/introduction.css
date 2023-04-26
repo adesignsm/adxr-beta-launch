@@ -14,6 +14,10 @@
   height: auto;
 }
 
+img#logoBlack {
+  filter: invert(var(--adxr-logo));
+}
+
 .introduction__content {
   padding: 1rem 3rem;
 }
