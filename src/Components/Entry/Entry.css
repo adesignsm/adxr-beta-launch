@@ -1,27 +1,23 @@
 #logo-canvas {
-    height: 100vh !important;
-    width: 100vw !important;
+  height: 100vh !important;
+  width: 100vw !important;
 }
 
 #logo-canvas canvas {
-    background-color: var(--background-primary) !important;
-    color: var(--text-secondary);
-  }
+  background-color: var(--background-primary) !important;
+  color: var(--text-secondary);
+}
 
 /*MEDIA QUERIES*/
 /*=========== BREAKPOINTS =============*/
 /*Large  Screens and Devices (e.g.:DESKTOPS)*/
 @media screen and (max-width: 1200px) {
+}
 
-  }
-  
-  /*Medium Screens and Devices (e.g.:TABLETS)*/
-  @media screen and (max-width: 768px) {
+/*Medium Screens and Devices (e.g.:TABLETS)*/
+@media screen and (max-width: 768px) {
+}
 
-  }
-  
-  /*Small Screens and Devices (e.g.:MOBILE)*/
-  @media screen and (max-width: 480px) {
-
-  }
-  
+/*Small Screens and Devices (e.g.:MOBILE)*/
+@media screen and (max-width: 480px) {
+}

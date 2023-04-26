@@ -3,7 +3,6 @@ import "./Entry.css";
 import $ from "jquery";
 import "jquery-ui-bundle";
 
-
 import * as THREE from "three";
 import {
   EffectComposer,
@@ -60,25 +59,36 @@ const Entry = () => {
 
       modelRef.current.position.set(-center.x, -center.y - 1, -center.z);
 
+
       //Hiding introduction text
-      $(".introduction").hide();
+      $("#introduction").hide();
+
+
       //On
       setTimeout(() => {
-
-        $("#logo-canvas canvas").animate({backgroundColor: "--background-secondary"});        
+        $("#logo-canvas canvas").animate({
+          backgroundColor: "--background-secondary",
+        });
         $("#logo-canvas").delay(1000);
+        $("#logo-canvas").on("click", function () {
+          $("#logo-canvas").animate({ left: "25vw" }, 2500);
+          setTimeout(() => {
+            $(".introduction").show();
+          }, 2500);
+        });
+
+    //will display intro content when switching between light and dark mode
+    $("#switch-theme").on("click", function () {
+      setTimeout(() => {
+        $(".introduction").show();
+      }, 100);
+    });
 
       }, 4000);
     }, [model]);
 
-    $("#logo-canvas").on("click", function(){
-      $("#logo-canvas").animate({ left: "25vw" }, 2500);
-      $(".introduction").show();
-      
-    })
 
 
-    
     return (
       <group ref={modelRef}>
         <primitive object={model.scene} scale={1.5} />
@@ -106,10 +116,8 @@ const Entry = () => {
             />
           )}
         </EffectComposer>
-        
       </Canvas>
       <Introduction />
-
     </>
   );
 };

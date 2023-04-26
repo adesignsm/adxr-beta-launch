@@ -1,8 +1,6 @@
 import React from "react";
 import "./root.css";
 import useLocalStorage from "use-local-storage";
-import $ from "jquery";
-import "jquery-ui-bundle";
 
 import Entry from "./Components/Entry";
 

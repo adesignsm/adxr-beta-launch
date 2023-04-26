@@ -1,16 +1,20 @@
+
+
 .introduction {
   max-width: 32.75rem;
   height: auto;
   display: flex;
   flex-direction: column;
   position: absolute;
+  justify-content: center;
   top: 15rem;
   left: 6.5rem;
   margin: auto 0;
+  display: none;
 }
 
-.logo {
-  max-width: 100%;
+.logo-black {
+  width: 100%;
   height: auto;
 }
 
@@ -19,7 +23,7 @@ img#logoBlack {
 }
 
 .introduction__content {
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
 }
 
 .fade-in {
@@ -27,9 +31,6 @@ img#logoBlack {
 }
 @keyframes fadeIn {
   0% {
-    opacity: 0;
-  }
-  60%{
     opacity: 0;
   }
   100% {
@@ -64,7 +65,10 @@ img#logoBlack {
   .introduction {
     position: relative;
     max-width: 100%;
-    top:-15rem;
     left: 0;
+    padding: 0 1rem;
+
   }
+
+
 }

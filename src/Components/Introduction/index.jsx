@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./introduction.css";
 import logoBlack from "../../Assets/Logos/logo_black.png";
-import logoWhite from "../../Assets/Logos/logo_white.png";
 
+import $ from "jquery";
+import "jquery-ui-bundle";
 
 const Introduction = () => {
 
-
-  const [logo, setLogo] = useState(logoBlack);
-
-  const darkMode = document.getElementById("switch-theme");
 
 
   const Intro = () => {

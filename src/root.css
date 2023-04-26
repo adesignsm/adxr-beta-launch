@@ -1,78 +1,71 @@
 /*
 ========================================
-
 Global Styles
 ======================================== */
 
-body, html {
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
+body,
+html {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 button {
-    color: var(--text-primary);
-    background-color: var(--background-primary);
-    border: 2px var(--text-primary) solid;
-    float: right;
-    transition: all .5s;
-  }
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+  border: 2px var(--text-primary) solid;
+  float: right;
+  transition: all 0.5s;
+}
 
-  .main {
-    background-color: var(--background-primary);
-  }
+.main {
+  background-color: var(--background-primary);
+}
 /*
 ========================================
 Variable CSS Styles
 ======================================== */
 :root {
-    --background-primary: white;
-    --background-secondary: black;
-    --text-primary: #191a1b;
-    --text-secondary:#f5f4ef;
-    //--adxr-logo: 0;
-
-  }
-  /*
+  --background-primary: white;
+  --background-secondary: black;
+  --text-primary: #191a1b;
+  --text-secondary: #f5f4ef;
+  //--adxr-logo: 0%;
+}
+/*
     reference: https://css-tricks.com/dark-modes-with-css/
   */
-  [data-theme='dark'] {
-    --background-primary: black;
-    --background-secondary: white;
-    --text-primary: #f5f4ef;
-    --text-secondary: #191a1b;
-    --adxr-logo: 1;
-
-
-  }
+[data-theme="dark"] {
+  --background-primary: black;
+  --background-secondary: white;
+  --text-primary: #f5f4ef;
+  --text-secondary: #191a1b;
+  --adxr-logo: 100%;
+}
 
 /*
 ======================================== 
 Typography Styles
 ======================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
 p {
-    font-family: "Intern", sans-serif;
-    font-size: 1.5rem;
-    font-weight: lighter;
-    color: var(--text-primary);
+  font-family: "Intern", sans-serif;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: var(--text-primary);
 }
-
 
 /*MEDIA QUERIES*/
 /*=========== BREAKPOINTS =============*/
 /*Large  Screens and Devices (e.g.:DESKTOPS)*/
 @media screen and (max-width: 1200px) {
+}
 
-  }
-  
-  /*Medium Screens and Devices (e.g.:TABLETS)*/
-  @media screen and (max-width: 768px) {
+/*Medium Screens and Devices (e.g.:TABLETS)*/
+@media screen and (max-width: 768px) {
+}
 
-
-  }
-  
-  /*Small Screens and Devices (e.g.:MOBILE)*/
-  @media screen and (max-width: 480px) {
-  }
+/*Small Screens and Devices (e.g.:MOBILE)*/
+@media screen and (max-width: 480px) {
+}
