@@ -1,6 +1,11 @@
+#model{
+  cursor: pointer !important;
+}
+
 #logo-canvas {
   height: 100vh !important;
   width: 100vw !important;
+  cursor: pointer;
 }
 
 #logo-canvas canvas {

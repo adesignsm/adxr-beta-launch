@@ -50,6 +50,7 @@ const Entry = () => {
       model.nodes.sphere.material.depthTest = true;
       model.nodes.sphere.material.transparent = true;
 
+
       model.nodes.sphere.material.color.r = 0;
       model.nodes.sphere.material.color.g = 0;
       model.nodes.sphere.material.color.b = 0;
@@ -61,6 +62,8 @@ const Entry = () => {
 
 
       //Hiding introduction text
+      $("#switch-theme").hide();
+
       $("#introduction").hide();
 
 
@@ -72,6 +75,7 @@ const Entry = () => {
         $("#logo-canvas").delay(1000);
         $("#logo-canvas").on("click", function () {
           $("#logo-canvas").animate({ left: "25vw" }, 2500);
+          $(".switch-theme").show();
           setTimeout(() => {
             $(".introduction").show();
           }, 2500);
@@ -81,8 +85,10 @@ const Entry = () => {
     $("#switch-theme").on("click", function () {
       setTimeout(() => {
         $(".introduction").show();
+        $(".switch-theme").show();
       }, 100);
     });
+
 
       }, 4000);
     }, [model]);
@@ -100,6 +106,7 @@ const Entry = () => {
     <>
       <Canvas id="logo-canvas" camera={{ position: [0, 0, 5] }}>
         <Model />
+
         <pointLight color="white" intensity={5} position={[0, 5, 0]} />
         <pointLight color="white" intensity={5} position={[0, -5, 0]} />
         {environmentState === true && <Environment preset="dawn" />}

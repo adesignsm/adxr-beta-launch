@@ -30,7 +30,8 @@ Variable CSS Styles
   --background-secondary: black;
   --text-primary: #191a1b;
   --text-secondary: #f5f4ef;
-  //--adxr-logo: 0%;
+  --text-hover: #00000073;
+  --adxr-logo: 0%;
 }
 /*
     reference: https://css-tricks.com/dark-modes-with-css/
@@ -40,6 +41,7 @@ Variable CSS Styles
   --background-secondary: white;
   --text-primary: #f5f4ef;
   --text-secondary: #191a1b;
+  --text-hover: #ffffff67;
   --adxr-logo: 100%;
 }
 
@@ -56,6 +58,25 @@ p {
   color: var(--text-primary);
 }
 
+/*
+======================================== 
+General Component Styles
+======================================== */
+
+/*dark-light mode button*/
+#switch-theme {
+  color: var(--text-primary);
+  border: none;
+  margin: 2rem;
+  cursor: pointer;
+  font-size: 1.2em;
+  display: none;
+}
+
+#switch-theme:hover {
+  color: var(--text-hover);
+}
+
 /*MEDIA QUERIES*/
 /*=========== BREAKPOINTS =============*/
 /*Large  Screens and Devices (e.g.:DESKTOPS)*/
@@ -68,4 +89,12 @@ p {
 
 /*Small Screens and Devices (e.g.:MOBILE)*/
 @media screen and (max-width: 480px) {
+  /*dark-light mode button*/
+  #switch-theme {
+    color: var(--text-primary);
+    border: none;
+    margin: 1rem 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+  }
 }
