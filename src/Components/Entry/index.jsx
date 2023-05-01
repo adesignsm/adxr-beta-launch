@@ -6,18 +6,15 @@ import "jquery-ui-bundle";
 import * as THREE from "three";
 import {
   EffectComposer,
-  DepthOfField,
   Bloom,
   Noise,
-  Vignette,
   Glitch,
 } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
   OrbitControls,
-  OrthographicCamera,
   Environment,
 } from "@react-three/drei";
 
@@ -29,6 +26,20 @@ const Entry = () => {
   const [glitchState, setGlitchState] = useState(true);
   const [noiseState, setNoiseState] = useState(true);
   const [environmentState, setEnvironmentState] = useState(false);
+
+    const handleMouseDown = () => {
+        if (window.innerWidth >= 690) {
+            $("#logo-canvas").animate({ left: "25vw" }, 2500);
+        } else {
+            $("#logo-canvas").animate({width: "50vh !important"}, 2500);
+        }
+
+        $("#switch-theme").show();
+
+        setTimeout(() => {
+            $(".introduction").show();
+        }, 500);
+    }
 
   const Model = () => {
     const [opacity, setOpacity] = useState(0);
@@ -67,42 +78,34 @@ const Entry = () => {
       $("#introduction").hide();
 
 
-      //On
-      setTimeout(() => {
-        $("#logo-canvas canvas").animate({
-          backgroundColor: "--background-secondary",
-        });
-        $("#logo-canvas").delay(1000);
-        $("#logo-canvas").on("click", function () {
-          $("#logo-canvas").animate({ left: "25vw" }, 2500);
-          $(".switch-theme").show();
-          setTimeout(() => {
-            $(".introduction").show();
-          }, 2500);
-        });
+        //On
+        setTimeout(() => {
+            $("#logo-canvas canvas").animate({
+                backgroundColor: "--background-secondary",
+            });
 
-    //will display intro content when switching between light and dark mode
-    $("#switch-theme").on("click", function () {
-      setTimeout(() => {
-        $(".introduction").show();
-        $(".switch-theme").show();
-      }, 100);
-    });
+            $("#logo-canvas").delay(1000);
 
-
-      }, 4000);
+            //will display intro content when switching between light and dark mode
+            $("#switch-theme").on("click", function () {
+                setTimeout(() => {
+                    $(".introduction").show();
+                    $(".switch-theme").show();
+                }, 100);
+            });
+        }, 4000);
     }, [model]);
 
 
 
     return (
-      <group ref={modelRef}>
+      <group ref={modelRef} onClick={handleMouseDown}>
         <primitive object={model.scene} scale={1.5} />
       </group>
     );
-  };
+};
 
-  return (
+return (
     <>
       <Canvas id="logo-canvas" camera={{ position: [0, 0, 5] }}>
         <Model />
@@ -114,14 +117,14 @@ const Entry = () => {
         <EffectComposer>
           <Bloom luminanceThreshold={1.0} luminanceSmoothing={1.0} />
           {noiseState === true && <Noise opacity={1} />}
-          {glitchState === true && (
+          {glitchState === true && 
             <Glitch
               duration={[0.1, 1.0]}
               mode={GlitchMode.SPORADIC}
               ratio={0.5}
               dtSize={128}
             />
-          )}
+          }
         </EffectComposer>
       </Canvas>
       <Introduction />

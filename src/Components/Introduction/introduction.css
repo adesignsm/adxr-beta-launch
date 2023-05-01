@@ -23,7 +23,7 @@ img#logoBlack {
 }
 
 .introduction__content {
-  padding: 1rem 2rem;
+  padding: 1rem 0rem;
 }
 
 .fade-in {
@@ -71,11 +71,8 @@ img#logoBlack {
     position: relative;
     max-width: 100%;
     left: 0;
-    top: -15rem;
+    top: -10rem;
     transform: translate(0);
     padding: 0 1rem;
-
   }
-
-
 }

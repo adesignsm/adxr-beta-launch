@@ -3,6 +3,7 @@ import "./root.css";
 import useLocalStorage from "use-local-storage";
 
 import Entry from "./Components/Entry";
+import Footer from "./Components/Footer";
 
 const App = () => {
   //Dark Mode
@@ -26,6 +27,7 @@ const App = () => {
         {theme === "light" ? "Dark Mode" : "Light Mode"}
       </button>
       <Entry />
+      <Footer />
     </div>
   );
 };

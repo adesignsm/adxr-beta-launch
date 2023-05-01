@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    text-align: center;
+    font-family: "Intern", sans-serif;
+    font-weight: lighter;
+}
+
+.footer h5 {
+    margin: 1rem;
+}
+
+.footer a {
+    text-decoration: underline;
+    color: var(--text-primary);
+}
+
+/*MEDIA QUERIES*/
+/*=========== BREAKPOINTS =============*/
+/*Large  Screens and Devices (e.g.:DESKTOPS)*/
+@media only screen and (min-width: 1200px) and (max-width: 2000px){
+    .footer {
+        justify-content: right;
+        text-align: right;
+    }
+}

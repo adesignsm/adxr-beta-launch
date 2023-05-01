@@ -1,27 +1,24 @@
 import React from "react";
 import "./introduction.css";
 import logoBlack from "../../Assets/Logos/logo_black.png";
+import Mail from "../Mail/Mail";
 
-import $ from "jquery";
 import "jquery-ui-bundle";
 
 const Introduction = () => {
-
-
-
   const Intro = () => {
 
     return (
       <div className="fade-in introduction" id="introduction">
         <img className="logo-black" id="logoBlack" src={logoBlack} />
         <p className="introduction__content">
-          ADXR, based in Toronto, Canada, is an organization aimed at bringing
-          multidisciplinary artists, designers and thinkers together to develop
-          work collectively.
+          Ascensive Design & Xollaborative Research Studio is a rapidly growing multidisciplinary design and consulting 
+          agency that provides services in branding, graphic development, product design, marketing and strategy.
           <br />
           <br />
           Full launch coming soon.
         </p>
+        <Mail />
       </div>
     );
   };
