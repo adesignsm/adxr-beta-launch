@@ -47,7 +47,7 @@ const Entry = () => {
     const modelRef = useRef();
 
     useFrame(() => {
-      modelRef.current.rotation.y += 0.002;
+      modelRef.current.rotation.y -= 0.002;
 
       if (opacity <= 0.3) {
         setOpacity((prevOpacity) => prevOpacity + 0.001);
