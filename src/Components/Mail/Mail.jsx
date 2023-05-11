@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./mail.css";
 
+import sanityClient from "../../client";
+
 const Mail = () => {
+    const [headline, setHeadline] = useState([]);
+
+    useEffect(() => {
+        sanityClient.fetch(
+            `*[_type == "newsletter_headline"]{
+                newsletter_headline_content,
+            }`
+        ).then((data) => {
+            console.log(data[0]);
+            setHeadline(data[0])
+        }).catch((err) => {
+            console.error(err);
+        })
+    }, []);
+
     return (
             <div id="mc_embed_signup" className="dark-mode-mc">
                 <form action="https://studio.us9.list-manage.com/subscribe/post?u=f21f26adb65a2efb8d030b9d0&amp;id=9a83e7a7c1&amp;f_id=008e19e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
                     <div id="mc_embed_signup_scroll">
-                        <h2>Welcome to ADXR Studio</h2>
+                        <h2>
+                            {headline && Object.keys(headline).map((content) => {
+                                return (
+                                    headline[content]
+                                )
+                            })}
+                        </h2>
                         <div className="indicates-required">
                             <span className="asterisk">*</span> indicates required
                         </div>
