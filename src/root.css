@@ -53,12 +53,25 @@ Variable CSS Styles
 Typography Styles
 ======================================== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+@font-face {
+  font-family: "Inter";
+  src: url(./Assets/Fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Neue";
+  src: url(./Assets/Fonts/PPNeueMontreal-Medium.otf);
+}
 
 p {
-  font-family: "Intern", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   font-weight: lighter;
   color: var(--text-primary);
+}
+
+h1, h2, h3, h4, h5, h6, label {
+  font-family: "Neue", sans-serif;
 }
 
 /*
@@ -77,11 +90,78 @@ General Component Styles
   font-size: 1.2em;
   display: none;
   position: fixed;
-  z-index: 9;
 }
 
 #switch-theme:hover {
   color: var(--text-hover);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 44px;
+  opacity: 1;
+  margin: 1rem;
+  z-index: 9;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 36px;
+  width: 36px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #000;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #000;
+  color: #fff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #000;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+}
+
+input:checked + .slider::before {
+  background-color: #fff;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /*MEDIA QUERIES*/
