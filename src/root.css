@@ -69,8 +69,18 @@ Typography Styles
   src: url(./Assets/Fonts/ArgentumSans-Regular.ttf);
 }
 
+@font-face {
+  font-family: "Argentun-light";
+  src: url(./Assets/Fonts/ArgentumSans-Light.ttf);
+}
+
+@font-face {
+  font-family: "Argentun-medium";
+  src: url(./Assets/Fonts/ArgentumSans-Medium.ttf);
+}
+
 p {
-  font-family: "Argentun";
+  font-family: "Argentun-light";
   font-size: 1.5rem;
   font-weight: lighter;
   color: var(--text-primary);

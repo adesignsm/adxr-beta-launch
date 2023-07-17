@@ -15,36 +15,28 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
   OrbitControls,
-  Environment,
 } from "@react-three/drei";
 
 import LOGO_MODEL from "../../Assets/Models/toposphere.glb";
 import Introduction from "../Introduction";
 
 const Entry = () => {
-
-  const [glitchState, setGlitchState] = useState(true);
-  const [noiseState, setNoiseState] = useState(true);
-
     const handleMouseDown = () => {
-        if (window.innerWidth >= 690) {
-          $("#logo-canvas").animate({ left: "25vw" }, 2500);
-        }
+      $("#introduction").show();
+      
+      if (window.innerWidth >= 690) {
+        $("#logo-canvas").animate({ left: "25vw" }, 2500);
+      }
 
-        $("#switch-theme").show();
+      $("#switch-theme").show();
 
-        setTimeout(() => {
-            $(".introduction").show();
-            setTimeout(() => {
-              if (window.innerWidth < 690) {
-                let targetPosition = $('#introduction').offset().top;
-          
-                $('html, body').animate({
-                  scrollTop: targetPosition
-                }, 1500);
-              }
-            }, 500);
-        }, 500);
+      if (window.innerWidth < 690) {
+        let targetPosition = $('#introduction').offset().top - 25;
+        
+        $('html, body').animate({
+          scrollTop: targetPosition
+        }, 1000);
+      }
     }
 
   const Model = () => {
@@ -108,18 +100,11 @@ return (
         <Model />
         <pointLight color="white" intensity={5} position={[0, 5, 0]} />
         <pointLight color="white" intensity={5} position={[0, -5, 0]} />
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false} enablePan={false} enabled={false}/>
         <EffectComposer>
           <Bloom luminanceThreshold={1.0} luminanceSmoothing={1.0} />
-          {noiseState === true && <Noise opacity={1} />}
-          {glitchState === true && 
-            <Glitch
-              duration={[0.1, 1.0]}
-              mode={GlitchMode.SPORADIC}
-              ratio={0.5}
-              dtSize={10}
-            />
-          }
+          <Noise opacity={1} />
+          <Glitch duration={[0.1, 0.5]} mode={GlitchMode.SPORADIC} ratio={0.5} dtSize={10} />
         </EffectComposer>
       </Canvas>
       <Introduction />

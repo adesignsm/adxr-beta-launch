@@ -54,5 +54,8 @@
   
 /*Small Screens and Devices (e.g.:MOBILE)*/
 @media screen and (max-width: 480px) {
-    
+    #mc_embed_signup_scroll h2 {
+        font-weight: lighter;
+        font-size: larger;
+    }
 }

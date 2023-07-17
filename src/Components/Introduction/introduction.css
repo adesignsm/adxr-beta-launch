@@ -24,6 +24,7 @@ img#logoBlack {
 
 .introduction__content {
   padding: 1rem 0rem;
+  font-weight: lighter;
 }
 
 .fade-in {
