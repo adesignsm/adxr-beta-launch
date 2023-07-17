@@ -53,6 +53,7 @@ Variable CSS Styles
 Typography Styles
 ======================================== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
 @font-face {
   font-family: "Inter";
   src: url(./Assets/Fonts/Inter-Regular.ttf);
@@ -63,8 +64,13 @@ Typography Styles
   src: url(./Assets/Fonts/PPNeueMontreal-Medium.otf);
 }
 
+@font-face {
+  font-family: "Argentun";
+  src: url(./Assets/Fonts/ArgentumSans-Regular.ttf);
+}
+
 p {
-  font-family: "Inter", sans-serif;
+  font-family: "Argentun";
   font-size: 1.5rem;
   font-weight: lighter;
   color: var(--text-primary);

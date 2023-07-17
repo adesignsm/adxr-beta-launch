@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./introduction.css";
-import logoBlack from "../../Assets/Logos/logo_black.png";
+import logoBlack from "../../Assets/Logos/logo_black.svg";
 import Mail from "../Mail/Mail";
 import "jquery-ui-bundle";
 
