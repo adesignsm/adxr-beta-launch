@@ -29,15 +29,22 @@ const Entry = () => {
 
     const handleMouseDown = () => {
         if (window.innerWidth >= 690) {
-            $("#logo-canvas").animate({ left: "25vw" }, 2500);
-        } else {
-            $("#logo-canvas").animate({width: "50vh !important"}, 2500);
+          $("#logo-canvas").animate({ left: "25vw" }, 2500);
         }
 
         $("#switch-theme").show();
 
         setTimeout(() => {
             $(".introduction").show();
+            setTimeout(() => {
+              if (window.innerWidth < 690) {
+                let targetPosition = $('#introduction').offset().top;
+          
+                $('html, body').animate({
+                  scrollTop: targetPosition
+                }, 1500);
+              }
+            }, 500);
         }, 500);
     }
 
