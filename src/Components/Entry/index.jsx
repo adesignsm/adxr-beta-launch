@@ -1,7 +1,7 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import "./Entry.css";
 import $ from "jquery";
-import "jquery-ui-bundle";
+// import "jquery-ui-bundle";
 
 import * as THREE from "three";
 import {
@@ -40,16 +40,11 @@ const Entry = () => {
     }
 
   const Model = () => {
-    const [opacity, setOpacity] = useState(0);
     const model = useGLTF(LOGO_MODEL);
     const modelRef = useRef();
 
     useFrame(() => {
       modelRef.current.rotation.y -= 0.002;
-
-      if (opacity <= 0.3) {
-        setOpacity((prevOpacity) => prevOpacity + 0.001);
-      }
     });
 
     useLayoutEffect(() => {
@@ -57,12 +52,6 @@ const Entry = () => {
       model.nodes.sphere.material.wireframe = false;
       model.nodes.sphere.material.depthWrite = true;
       model.nodes.sphere.material.depthTest = true;
-      model.nodes.sphere.material.transparent = true;
-
-
-      model.nodes.sphere.material.color.r = 0;
-      model.nodes.sphere.material.color.g = 0;
-      model.nodes.sphere.material.color.b = 0;
 
       const box = new THREE.Box3().setFromObject(modelRef.current);
       const center = box.getCenter(new THREE.Vector3());
