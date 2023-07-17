@@ -15,7 +15,6 @@ const Introduction = () => {
         introduction_description,
       }`
     ).then((data) => {
-      console.log(data[0]);
       setIntroductionContent(data[0]);
     }).catch((err) => {
       console.error(err);

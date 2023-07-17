@@ -25,7 +25,6 @@ const Entry = () => {
 
   const [glitchState, setGlitchState] = useState(true);
   const [noiseState, setNoiseState] = useState(true);
-  const [environmentState, setEnvironmentState] = useState(false);
 
     const handleMouseDown = () => {
         if (window.innerWidth >= 690) {
@@ -78,32 +77,23 @@ const Entry = () => {
 
       modelRef.current.position.set(-center.x, -center.y - 1, -center.z);
 
-
-      //Hiding introduction text
       $("#switch-theme").hide();
-
       $("#introduction").hide();
+      
+      setTimeout(() => {
+        $("#logo-canvas canvas").animate({
+            backgroundColor: "--background-secondary",
+        });
 
-
-        //On
-        setTimeout(() => {
-            $("#logo-canvas canvas").animate({
-                backgroundColor: "--background-secondary",
-            });
-
-            $("#logo-canvas").delay(1000);
-
-            //will display intro content when switching between light and dark mode
-            $("#switch-theme").on("click", function () {
-                setTimeout(() => {
-                    $(".introduction").show();
-                    $(".switch-theme").show();
-                }, 100);
-            });
-        }, 4000);
+        $("#logo-canvas").delay(1000);
+        $("#switch-theme").on("click", function () {
+            setTimeout(() => {
+                $(".introduction").show();
+                $(".switch-theme").show();
+              }, 100);
+          });
+      }, 4000);
     }, [model]);
-
-
 
     return (
       <group ref={modelRef} onClick={handleMouseDown}>
@@ -116,10 +106,8 @@ return (
     <>
       <Canvas id="logo-canvas" camera={{ position: [0, 0, 5] }}>
         <Model />
-
         <pointLight color="white" intensity={5} position={[0, 5, 0]} />
         <pointLight color="white" intensity={5} position={[0, -5, 0]} />
-        {environmentState === true && <Environment preset="dawn" />}
         <OrbitControls enableZoom={false} />
         <EffectComposer>
           <Bloom luminanceThreshold={1.0} luminanceSmoothing={1.0} />
@@ -129,7 +117,7 @@ return (
               duration={[0.1, 1.0]}
               mode={GlitchMode.SPORADIC}
               ratio={0.5}
-              dtSize={128}
+              dtSize={10}
             />
           }
         </EffectComposer>

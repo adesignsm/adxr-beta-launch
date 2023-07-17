@@ -12,7 +12,6 @@ const Mail = () => {
                 newsletter_headline_content,
             }`
         ).then((data) => {
-            console.log(data[0]);
             setHeadline(data[0])
         }).catch((err) => {
             console.error(err);
@@ -47,7 +46,9 @@ const Mail = () => {
                             <div className="response" id="mce-success-response" style={{display: "none"}}></div>
                         </div>
                         
-                        <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true"><input type="text" name="b_f21f26adb65a2efb8d030b9d0_9a83e7a7c1" tabIndex="-1" value="" /></div>
+                        <div style={{position: "absolute", left: "-5000px"}} aria-hidden="true">
+                            <input type="text" name="b_f21f26adb65a2efb8d030b9d0_9a83e7a7c1" tabIndex="-1" value="Enter email" />
+                        </div>
                         <div className="optionalParent">
                             <div className="clear foot">
                                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" />

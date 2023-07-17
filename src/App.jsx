@@ -25,7 +25,7 @@ const App = () => {
     <div className="main" data-theme={theme}>
       <label className="switch fade-in switch-theme">
         <input className="" id="switch-theme" onClick={switchTheme} type="checkbox" />
-        <span class="slider round"></span>
+        <span className="slider round"></span>
       </label>
 
       <Entry />
