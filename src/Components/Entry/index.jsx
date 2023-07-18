@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import "./Entry.css";
 import $ from "jquery";
 
@@ -39,13 +39,17 @@ const Entry = () => {
 
     useFrame(() => {
       deviceOrientationRef.current.update();
+      deviceOrientationRef.current.connect();
 
-      if (deviceOrientationRef.current.object !== null) {
-        let deviceOrientationY = deviceOrientationRef.current.euler.y;
+      let deviceOrientationY = deviceOrientationRef.current.euler.y;
         
-        camera.rotation.set(0, 0, 0);
-        modelRef.current.rotation.y = deviceOrientationY;
-      }
+      camera.rotation.set(0, 0, 0);
+      modelRef.current.rotation.y = deviceOrientationY;
+
+      return () => {
+        deviceOrientationRef.current.disconnect();
+      };
+
     });
 
     useLayoutEffect(() => {
