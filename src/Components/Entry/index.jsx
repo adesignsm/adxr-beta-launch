@@ -14,25 +14,6 @@ import Introduction from "../Introduction";
 const Entry = () => {
   const deviceOrientationRef = useRef();
 
-  const askPermission = () => {
-    // feature detect
-    if (typeof DeviceOrientationEvent.requestPermission === "function") {
-      DeviceOrientationEvent.requestPermission()
-        .then(permissionState => {
-          if (permissionState === "granted") {
-            window.addEventListener("deviceorientation", () => {});
-          }
-        })
-        .catch(console.error);
-    } else {
-      // handle regular non iOS 13+ devices
-    }
-  }
-
-  useEffect(() => {
-    askPermission();
-  },[]);
-
   const handleMouseDown = () => {
       $("#introduction").show();
       
@@ -62,7 +43,11 @@ const Entry = () => {
       let deviceOrientationY = deviceOrientationRef.current.euler.y;
         
       camera.rotation.set(0, 0, 0);
-      modelRef.current.rotation.y = deviceOrientationY;
+      if (deviceOrientationY <= 0) {
+        modelRef.current.rotation.y = deviceOrientationY;
+      } else {
+        modelRef.current.rotation.y = 0.002;
+      }
 
     });
 
