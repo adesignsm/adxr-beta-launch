@@ -22,6 +22,17 @@ img#logoBlack {
   filter: invert(var(--adxr-logo));
 }
 
+.back-to-top {
+  width: 20%;
+  height: auto;
+  float: right;
+  cursor: pointer;
+}
+
+img#back-to-top-button {
+  filter: invert(var(--adxr-logo));
+}
+
 .introduction__content {
   padding: 1rem 0rem;
   font-weight: lighter;
