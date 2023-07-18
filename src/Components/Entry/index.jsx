@@ -1,20 +1,27 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import "./Entry.css";
 import $ from "jquery";
+// import "jquery-ui-bundle";
 
 import * as THREE from "three";
-import { EffectComposer, Bloom, Noise, Glitch } from "@react-three/postprocessing";
+import {
+  EffectComposer,
+  Bloom,
+  Noise,
+  Glitch,
+} from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useGLTF, DeviceOrientationControls } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  useGLTF,
+  OrbitControls,
+} from "@react-three/drei";
 
 import LOGO_MODEL from "../../Assets/Models/toposphere.glb";
 import Introduction from "../Introduction";
 
 const Entry = () => {
-  const deviceOrientationRef = useRef();
-
-  const handleMouseDown = () => {
+    const handleMouseDown = () => {
       $("#introduction").show();
       
       if (window.innerWidth >= 690) {
@@ -30,25 +37,14 @@ const Entry = () => {
           scrollTop: targetPosition
         }, 1000);
       }
-  }
+    }
 
   const Model = () => {
     const model = useGLTF(LOGO_MODEL);
     const modelRef = useRef();
-    const { camera } = useThree();
 
     useFrame(() => {
-      deviceOrientationRef.current.update();
-
-      let deviceOrientationY = deviceOrientationRef.current.euler.y;
-        
-      camera.rotation.set(0, 0, 0);
-      if (deviceOrientationY <= 0) {
-        modelRef.current.rotation.y = deviceOrientationY;
-      } else {
-        modelRef.current.rotation.y = 0.002;
-      }
-
+      modelRef.current.rotation.y -= 0.002;
     });
 
     useLayoutEffect(() => {
@@ -89,11 +85,11 @@ const Entry = () => {
 
 return (
     <>
-      <Canvas id="logo-canvas" camera={{ position: [0, 0, 5]}}>
+      <Canvas id="logo-canvas" camera={{ position: [0, 0, 5] }}>
         <Model />
         <pointLight color="white" intensity={5} position={[0, 5, 0]} />
         <pointLight color="white" intensity={5} position={[0, -5, 0]} />
-        <DeviceOrientationControls ref={deviceOrientationRef} />
+        <OrbitControls enableZoom={false} enablePan={false}/>
         <EffectComposer>
           <Bloom luminanceThreshold={1.0} luminanceSmoothing={1.0} />
           <Noise opacity={1} />
