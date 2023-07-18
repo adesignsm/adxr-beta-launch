@@ -6,7 +6,6 @@ import Entry from "./Components/Entry";
 import Footer from "./Components/Footer";
 
 const App = () => {
-  //Dark Mode
   const defaultLight = window.matchMedia(
     "(prefers-color-scheme: light)"
   ).matches;
@@ -15,7 +14,6 @@ const App = () => {
     defaultLight ? "light" : "dark"
   );
 
-  //Toggle between 'light' and 'dark' mode
   const switchTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
