@@ -54,10 +54,10 @@ Typography Styles
 ======================================== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
 
-@font-face {
+/* @font-face {
   font-family: "Inter";
   src: url(./Assets/Fonts/Inter-Regular.ttf);
-}
+} */
 
 @font-face {
   font-family: "Neue";
@@ -65,19 +65,24 @@ Typography Styles
 }
 
 @font-face {
+  font-family: "Neue";
+  src: url(./Assets/Fonts/NeueMontreal-Regular.otf);
+}
+
+/* @font-face {
   font-family: "Argentun";
   src: url(./Assets/Fonts/ArgentumSans-Regular.ttf);
-}
+} */
 
 @font-face {
   font-family: "Argentun-light";
   src: url(./Assets/Fonts/ArgentumSans-Light.ttf);
 }
 
-@font-face {
+/* @font-face {
   font-family: "Argentun-medium";
   src: url(./Assets/Fonts/ArgentumSans-Medium.ttf);
-}
+} */
 
 p {
   font-family: "Argentun-light";
