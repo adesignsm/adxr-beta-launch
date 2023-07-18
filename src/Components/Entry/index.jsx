@@ -14,6 +14,12 @@ import Introduction from "../Introduction";
 const Entry = () => {
   const deviceOrientationRef = useRef();
 
+  useEffect(() => {
+    window.ondeviceorientation = () => {
+      alert("hit");
+    }
+  })
+
   const handleMouseDown = () => {
       $("#introduction").show();
       
@@ -39,16 +45,11 @@ const Entry = () => {
 
     useFrame(() => {
       deviceOrientationRef.current.update();
-      deviceOrientationRef.current.connect();
 
       let deviceOrientationY = deviceOrientationRef.current.euler.y;
         
       camera.rotation.set(0, 0, 0);
       modelRef.current.rotation.y = deviceOrientationY;
-
-      return () => {
-        deviceOrientationRef.current.disconnect();
-      };
 
     });
 
