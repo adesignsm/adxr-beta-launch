@@ -22,17 +22,6 @@ img#logoBlack {
   filter: invert(var(--adxr-logo));
 }
 
-.back-to-top {
-  width: 20%;
-  height: auto;
-  float: right;
-  cursor: pointer;
-}
-
-img#back-to-top-button {
-  filter: invert(var(--adxr-logo));
-}
-
 .introduction__content {
   padding: 1rem 0rem;
   font-weight: lighter;
@@ -53,12 +42,6 @@ img#back-to-top-button {
 /*MEDIA QUERIES*/
 /*=========== BREAKPOINTS =============*/
 /*Large  Screens and Devices (e.g.:DESKTOPS)*/
-@media only screen and (min-width: 768px) and (max-width: 1920px) {
-  #back-to-top-button {
-    display: none;
-  }
-}
-
 @media screen and (max-width: 1200px) {
   .introduction {
     max-width: 33%;

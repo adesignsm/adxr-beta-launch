@@ -185,9 +185,43 @@ input:checked + .slider::before {
   border-radius: 50%;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  width: 20%;
+  height: auto;
+  cursor: pointer;
+
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+
+}
+
+img#back-to-top-button {
+  filter: invert(var(--adxr-logo));
+}
+
+.back-to-top.flip-up {
+  transform: rotate(0deg);
+}
+
+.back-to-top.flip-down {
+  transform: rotate(180deg);
+}
+
 /*MEDIA QUERIES*/
 /*=========== BREAKPOINTS =============*/
 /*Large  Screens and Devices (e.g.:DESKTOPS)*/
+@media only screen and (min-width: 768px) and (max-width: 1920px) {
+  #back-to-top-button {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1200px) {
 }
 

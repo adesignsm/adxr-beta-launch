@@ -1,11 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./introduction.css";
 import logoBlack from "../../Assets/Logos/logo_black.svg";
-import backToTopButton from "../../Assets/Logos/back-to-top-black.svg";
 import Mail from "../Mail/Mail";
-import $ from "jquery";
-// import "jquery-ui-bundle";
-
 import sanityClient from "../../client";
 
 const Introduction = () => {
@@ -23,14 +19,6 @@ const Introduction = () => {
     })
   }, []);
 
-  const handleBackToTop = () => {
-    let targetPosition = $('body').offset().top;
-        
-    $('html, body').animate({
-      scrollTop: targetPosition
-    }, 1000);
-  }
-
   const Intro = () => {
 
     return (
@@ -47,7 +35,6 @@ const Introduction = () => {
           Full launch coming soon.
         </p>
         <Mail />
-        <img className="back-to-top" id="back-to-top-button" src={backToTopButton} onClick={handleBackToTop}/>
       </div>
     );
   };

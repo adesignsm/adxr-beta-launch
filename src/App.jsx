@@ -1,6 +1,10 @@
 import React from "react";
+import $ from "jquery";
+import "jquery-ui-bundle";
 import "./root.css";
 import useLocalStorage from "use-local-storage";
+
+import backToTopButton from "./Assets/Logos/back-to-top-black.svg";
 
 import Entry from "./Components/Entry";
 import Footer from "./Components/Footer";
@@ -19,6 +23,33 @@ const App = () => {
     setTheme(newTheme);
   };
 
+  const handleBackToTop = (e) => {
+    let targetPositionUpward = $('body').offset().top;
+    let targetPositionDownward = $("body").prop("scrollHeight");
+
+    console.log(e);
+        
+    if (e.target.classList.contains("flip-down")) {
+      $("#introduction").show();
+      $('html, body').animate({
+        scrollTop: targetPositionDownward
+      }, 2000);
+
+      setTimeout(() => {
+        e.target.classList.replace("flip-down", "flip-up");
+      }, 1000);
+
+    } else if (e.target.classList.contains("flip-up")) {
+      $('html, body').animate({
+        scrollTop: targetPositionUpward
+      }, 1000);
+
+      setTimeout(() => {
+        e.target.classList.replace("flip-up", "flip-down");
+      }, 1000);
+    }
+  }
+
   return (
     <div className="main" data-theme={theme}>
       <label className="switch fade-in switch-theme">
@@ -28,6 +59,8 @@ const App = () => {
 
       <Entry />
       <Footer />
+
+      <img className="back-to-top flip-down" id="back-to-top-button" src={backToTopButton} onClick={handleBackToTop}/>
     </div>
   );
 };
