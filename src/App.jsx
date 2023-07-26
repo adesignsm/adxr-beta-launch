@@ -25,14 +25,14 @@ const App = () => {
 
   const handleBackToTop = (e) => {
     let targetPositionUpward = $('body').offset().top;
-    let targetPositionDownward = $("body").prop("scrollHeight");
+    let targetPositionDownward = $("#introduction").prop("scrollHeight");
 
     console.log(e);
         
     if (e.target.classList.contains("flip-down")) {
       $("#introduction").animate({opacity: "1"}, 700);
       $('html, body').animate({
-        scrollTop: targetPositionDownward - 300
+        scrollTop: targetPositionDownward - 150
       }, 2000);
 
       setTimeout(() => {
