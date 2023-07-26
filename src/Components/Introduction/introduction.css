@@ -10,7 +10,7 @@
   transform: translate(10%, -50%);
   left: 6.5rem;
   margin: auto 0;
-  display: none;
+  opacity: 0;
 }
 
 .logo-black {
@@ -48,7 +48,7 @@ img#logoBlack {
     justify-content: center;
     transform: translate(5%, -45%);
     margin: auto 0;
-    display: none;
+    opacity: 0;
   }
 }
 
@@ -62,7 +62,7 @@ img#logoBlack {
     left: 1rem;
     transform: translate(5%, -45%);
     margin: auto 0;
-    display: none;
+    opacity: 0;
   }
 }
 
@@ -75,5 +75,6 @@ img#logoBlack {
     top: -10rem;
     transform: translate(0);
     padding: 0 1rem;
+    opacity: 0;
   }
 }

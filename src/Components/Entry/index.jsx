@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import "./Entry.css";
 import $ from "jquery";
-// import "jquery-ui-bundle";
+import "jquery-ui-bundle";
 
 import * as THREE from "three";
 import {
@@ -22,7 +22,7 @@ import Introduction from "../Introduction";
 
 const Entry = () => {
     const handleMouseDown = () => {
-      $("#introduction").show();
+      $("#introduction").animate({opacity: "1"}, 700);
       
       if (window.innerWidth >= 690) {
         $("#logo-canvas").animate({ left: "25vw" }, 2500);
@@ -37,6 +37,8 @@ const Entry = () => {
           scrollTop: targetPosition
         }, 1000);
       }
+
+      document.getElementById("back-to-top-button").classList.replace("flip-down", "flip-up")
     }
 
   const Model = () => {
@@ -59,7 +61,6 @@ const Entry = () => {
       modelRef.current.position.set(-center.x, -center.y - 1, -center.z);
 
       $("#switch-theme").hide();
-      $("#introduction").hide();
       
       setTimeout(() => {
         $("#logo-canvas canvas").animate({
@@ -69,7 +70,6 @@ const Entry = () => {
         $("#logo-canvas").delay(1000);
         $("#switch-theme").on("click", function () {
             setTimeout(() => {
-                $(".introduction").show();
                 $(".switch-theme").show();
               }, 100);
           });
@@ -78,7 +78,7 @@ const Entry = () => {
 
     return (
       <group ref={modelRef} onClick={handleMouseDown}>
-        <primitive object={model.scene} scale={1.5} />
+        <primitive object={model.scene} scale={1.5} onLoad={$("#back-to-top-button").delay(500).fadeIn()}/>
       </group>
     );
 };

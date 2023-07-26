@@ -22,7 +22,7 @@ const Introduction = () => {
   const Intro = () => {
 
     return (
-      <div className="fade-in introduction" id="introduction">
+      <div className="introduction" id="introduction">
         <img className="logo-black" id="logoBlack" src={logoBlack} />
         <p className="introduction__content">
           {introductionContent && Object.keys(introductionContent).map((content) => {

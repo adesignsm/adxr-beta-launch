@@ -30,9 +30,9 @@ const App = () => {
     console.log(e);
         
     if (e.target.classList.contains("flip-down")) {
-      $("#introduction").show();
+      $("#introduction").animate({opacity: "1"}, 700);
       $('html, body').animate({
-        scrollTop: targetPositionDownward
+        scrollTop: targetPositionDownward - 300
       }, 2000);
 
       setTimeout(() => {
@@ -40,6 +40,7 @@ const App = () => {
       }, 1000);
 
     } else if (e.target.classList.contains("flip-up")) {
+      $("#introduction").animate({opacity: "0"}, 700);
       $('html, body').animate({
         scrollTop: targetPositionUpward
       }, 1000);
@@ -49,12 +50,6 @@ const App = () => {
       }, 1000);
     }
   }
-
-  useEffect(() => {
-    setTimeout(() => {
-      $("#back-to-top-button").fadeIn(200);
-    }, 5000);
-  }, []);
 
   return (
     <div className="main" data-theme={theme}>

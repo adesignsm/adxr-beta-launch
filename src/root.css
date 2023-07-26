@@ -217,9 +217,9 @@ img#back-to-top-button {
 /*MEDIA QUERIES*/
 /*=========== BREAKPOINTS =============*/
 /*Large  Screens and Devices (e.g.:DESKTOPS)*/
-@media only screen and (min-width: 768px) and (max-width: 1920px) {
+@media only screen and (min-width: 768px) {
   #back-to-top-button {
-    display: none;
+    display: none !important;
   }
 }
 
