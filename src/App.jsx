@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import $ from "jquery";
 import "jquery-ui-bundle";
 import "./root.css";
@@ -49,6 +49,12 @@ const App = () => {
       }, 1000);
     }
   }
+
+  useEffect(() => {
+    setTimeout(() => {
+      $("#back-to-top-button").fadeIn(200);
+    }, 5000);
+  }, []);
 
   return (
     <div className="main" data-theme={theme}>
