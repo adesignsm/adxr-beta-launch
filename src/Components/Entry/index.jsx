@@ -35,7 +35,7 @@ const Entry = () => {
         
         $('html, body').animate({
           scrollTop: targetPosition - 150
-        }, 1000);
+        }, 2000);
       }
 
       document.getElementById("back-to-top-button").classList.replace("flip-down", "flip-up")
