@@ -31,10 +31,10 @@ const Entry = () => {
       $("#switch-theme").show();
 
       if (window.innerWidth < 690) {
-        let targetPosition = $('#introduction').offset().top - 25;
+        let targetPosition = $("#introduction").prop("scrollHeight");
         
         $('html, body').animate({
-          scrollTop: targetPosition
+          scrollTop: targetPosition - 150
         }, 1000);
       }
 
