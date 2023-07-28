@@ -32,7 +32,7 @@ const App = () => {
     if (e.target.classList.contains("flip-down")) {
       $("#introduction").animate({opacity: "1"}, 700);
       $('html, body').animate({
-        scrollTop: targetPositionDownward - 150
+        scrollTop: targetPositionDownward - 160
       }, 2000);
 
       setTimeout(() => {
