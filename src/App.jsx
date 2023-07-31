@@ -51,6 +51,10 @@ const App = () => {
     }
   }
 
+  useEffect(() => {
+    document.body.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="main" data-theme={theme}>
       <label className="switch fade-in switch-theme">

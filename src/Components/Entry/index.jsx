@@ -34,7 +34,7 @@ const Entry = () => {
         let targetPosition = $("#introduction").prop("scrollHeight");
         
         $('html, body').animate({
-          scrollTop: targetPosition - 160
+          scrollTop: targetPosition + 50
         }, 2000);
       }
 
