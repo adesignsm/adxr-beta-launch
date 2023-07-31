@@ -22,7 +22,7 @@ import Introduction from "../Introduction";
 
 const Entry = () => {
     const handleMouseDown = () => {
-      $("#introduction").animate({opacity: "1"}, 700);
+      $("#introduction").animate({opacity: "1"}, 3500);
       
       if (window.innerWidth >= 690) {
         $("#logo-canvas").animate({ left: "25vw" }, 2500);
@@ -31,11 +31,11 @@ const Entry = () => {
       $("#switch-theme").show();
 
       if (window.innerWidth < 690) {
-        let targetPosition = $("#introduction").prop("scrollHeight");
+        let targetPosition = $(document).height();;
         
         $('html, body').animate({
-          scrollTop: targetPosition + 50
-        }, 2000);
+          scrollTop: targetPosition
+        }, 4000);
       }
 
       document.getElementById("back-to-top-button").classList.replace("flip-down", "flip-up")

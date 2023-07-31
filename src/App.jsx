@@ -25,25 +25,25 @@ const App = () => {
 
   const handleBackToTop = (e) => {
     let targetPositionUpward = $('body').offset().top;
-    let targetPositionDownward = $("#introduction").prop("scrollHeight");
+    let targetPositionDownward = $(document).height();
 
     console.log(e);
         
     if (e.target.classList.contains("flip-down")) {
-      $("#introduction").animate({opacity: "1"}, 700);
+      $("#introduction").animate({opacity: "1"}, 3500);
       $('html, body').animate({
-        scrollTop: targetPositionDownward - 160
-      }, 2000);
+        scrollTop: targetPositionDownward
+      }, 4000);
 
       setTimeout(() => {
         e.target.classList.replace("flip-down", "flip-up");
       }, 1000);
 
     } else if (e.target.classList.contains("flip-up")) {
-      $("#introduction").animate({opacity: "0"}, 700);
+      $("#introduction").animate({opacity: "0"}, 2000);
       $('html, body').animate({
         scrollTop: targetPositionUpward
-      }, 1000);
+      }, 4000);
 
       setTimeout(() => {
         e.target.classList.replace("flip-up", "flip-down");
